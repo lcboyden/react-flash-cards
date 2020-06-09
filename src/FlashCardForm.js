@@ -20,7 +20,7 @@ class FlashCardForm extends React.Component {
           <Form.Input 
             fluid 
             label="Term" 
-            placeholder="Term" 
+            placeholder="French Term" 
             name="term" 
             value={this.state.term} 
             onChange={this.handleChange}
@@ -28,12 +28,12 @@ class FlashCardForm extends React.Component {
           <Form.Input 
             fluid 
             label="Definition" 
-            placeholder="Definition" 
+            placeholder="English Definition" 
             name="definition" 
             value={this.state.definition} 
             onChange={this.handleChange}
           />
-          <Form.Button>Submit</Form.Button>
+          <Form.Button color="orange">Submit</Form.Button>
         </Form.Group>
       </Form>
     )
