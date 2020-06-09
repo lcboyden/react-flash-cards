@@ -25,6 +25,14 @@ class App extends React.Component {
     this.setState({ cards: [newFlashcard, ...this.state.cards]});
   };
 
+  removeFlashCard = (id) => {
+    const cards = this.state.cards.filter( card => {
+      if (card.id !== id)
+        return card
+    });
+    this.setState({ cards: [...cards], });
+  };
+
   render() {
     return (
       <Container style={{ paddingTop: "25px" }}>
@@ -34,7 +42,10 @@ class App extends React.Component {
       <FlashCardForm 
         add={this.addFlashCard}
       />
-      <FlashCards flashCards={this.state.cards} />
+      <FlashCards 
+        flashCards={this.state.cards} 
+        remove={this.removeFlashCard}
+      />
     </Container>
     );
   }

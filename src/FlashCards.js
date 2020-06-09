@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "semantic-ui-react";
 import FlashCard from "./FlashCard";
 
-const FlashCards = ( { flashCards } ) => (
+const FlashCards = ( { flashCards, remove } ) => (
   <div>
     <Card.Content>
       {
@@ -10,6 +10,8 @@ const FlashCards = ( { flashCards } ) => (
           <FlashCard 
             key={flashCard.id}
             flashCard={flashCard}
+            {...flashCards}
+            remove={remove}
           />
         ))
       }
